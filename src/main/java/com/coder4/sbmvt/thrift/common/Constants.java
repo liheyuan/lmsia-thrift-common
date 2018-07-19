@@ -11,22 +11,28 @@ package com.coder4.sbmvt.thrift.common;
  */
 public class Constants {
 
-    private static final int THRIFT_PORT = 3000;
-
-    private static final int THRIFT_TIMEOUT = 5000;
+    // 服务监听端口
+    public static final int THRIFT_PORT = 3000;
 
     // 16mb
-    protected static final int THRIFT_MAX_FRAME_SIZE = 1024 * 1024 * 16;
+    public static final int THRIFT_MAX_FRAME_SIZE = 1024 * 1024 * 16;
 
     // 4MB
-    private static final int THRIFT_MAX_READ_BUF_SIZE = 4 * 1024 * 1024;
+    public static final int THRIFT_MAX_READ_BUF_SIZE = 4 * 1024 * 1024;
 
-    private static final int THRIFT_TCP_BACKLOG = 5000;
+    // 服务队列长度
+    public static final int THRIFT_TCP_BACKLOG = 5000;
 
-    private static final int THRIFT_CORE_THREADS = 64;
+    // 常驻线程
+    public static final int THRIFT_CORE_THREADS = 64;
 
-    private static final int THRIFT_MAX_THREADS = 256;
+    // 最多线程
+    public static final int THRIFT_MAX_THREADS = 256;
 
-    private static final int THRIFT_SELECTOR_THREADS = 32;
+    // 事件驱动线程数
+    public static final int THRIFT_SELECTOR_THREADS = 16;
+
+    // 连接超时
+    public static final int THRIFT_TIMEOUT = 5000;
 
 }
