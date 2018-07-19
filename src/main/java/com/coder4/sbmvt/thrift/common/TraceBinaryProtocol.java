@@ -39,10 +39,11 @@ public class TraceBinaryProtocol extends TBinaryProtocol {
     @Override
     public void writeFieldStop() throws TException {
         // get traceId from context
-        String traceId = TraceIdUtils.getTraceId();
+        String traceId = TraceIdContext.getTraceId();
         if (traceId == null || traceId.isEmpty()) {
             // generate new one if not avaliable
             traceId = TraceIdUtils.getTraceId();
+            TraceIdContext.setTraceId(traceId);
         }
         // parse traceId
         TField field = new TField("", TType.STRING, TRACE_ID_FIELD);
