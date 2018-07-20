@@ -65,6 +65,10 @@ public class TraceBinaryProtocol extends TBinaryProtocol {
                     if (field.type == TType.STRING) {
                         // set traceId to context
                         String traceId = readString();
+                        if (traceId == null || traceId.isEmpty()) {
+                            // generate new one if not avaliable
+                            traceId = TraceIdUtils.getTraceId();
+                        }
                         TraceIdContext.setTraceId(traceId);
                         readFieldEnd();
                     } else {
